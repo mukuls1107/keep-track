@@ -1,0 +1,14 @@
+
+Date and Time of Storage: Tue Dec 19 01:04:24 2023
+👇
+1. tcl
+
+2. ddl
+
+3. dml
+
+4. dcl
+
+5. ACID props
+
+===========================
