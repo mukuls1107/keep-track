@@ -12,3 +12,47 @@ Date and Time of Storage: Tue Dec 19 01:04:24 2023
 5. ACID props
 
 ===========================
+
+Date and Time of Storage: Tue Dec 19 13:43:00 2023
+👇
+1. TCL
+
+2. DDL
+
+3. DML
+
+4. DCL
+
+5. ACID Props
+
+===========================
+
+Date and Time of Storage: Tue Dec 19 22:31:55 2023
+👇
+1. restart able code
+
+2. fast code
+
+3. safe code
+
+===========================
+
+Date and Time of Storage: Tue Dec 19 22:33:21 2023
+👇
+1. ready?
+
+2. set?
+
+===========================
+
+Date and Time of Storage: Tue Dec 19 22:33:46 2023
+👇
+1. working?
+
+===========================
+
+Date and Time of Storage: Tue Dec 19 22:38:43 2023
+👇
+1. test task
+
+===========================

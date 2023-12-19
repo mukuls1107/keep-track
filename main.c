@@ -4,39 +4,86 @@
 #include <windows.h>
 #include <stdbool.h>
 
+int startApp();
 int addTask();
 int showTask();
+int clearScreen();
+int status();
+
+
 void main(void)
+{
+
+    startApp();
+    int check;
+    while (true)
+    {
+        check = status();
+        if (check == 1)
+        {
+            break;
+        }
+    }
+}
+
+int status()
+{
+    char choice;
+    printf("Restart The program Again? [Y/N]\n");
+    scanf("%c", &choice);
+
+    if (choice == 'Y' || choice == 'y')
+    {
+        startApp();
+        return 0;
+    }
+    else if (choice == 'N' || choice == 'n')
+    {
+        printf("Closing the program...");
+        Sleep(2000);
+        system("cls");
+        return 1;
+    }
+}
+
+int startApp()
 {
     int choice;
 
     printf("Starting the program...\n");
     Sleep(2000);
-
+    system("cls");
     printf("=========== Select Your Choice =========== \n1. Add A Task. \n2. Display All Tasks.\n");
     scanf("%d", &choice);
 
-    switch (choice)
+    if (choice == 1)
     {
-    case 1:
         addTask();
-        break;
-    case 2:
-        showTask();
-        break;
-
-
-    default:
-        printf("Unknown Error Occured!");
-        break;
+        clearScreen();
+        return 0;
     }
+    else if (choice == 2)
+    {
+        showTask();
+        clearScreen();
+        return 0;
+    }
+    else
+    {
+        system("cls");
+        printf("Unknown Error Occured!");
+        return 1;
+    }
+}
 
+int clearScreen()
+{
     printf("Program finished!\n");
     Sleep(1000);
     printf("Clearing all the trash in 5 seconds...");
     Sleep(5000);
     system("cls");
-    exit(0);
+    return 0;
 }
 
 int addTask()
@@ -102,6 +149,7 @@ int showTask()
     if (fp == NULL)
     {
         printf("Unknown Error Occurred!\n");
+        return 1;
     }
 
     printf("Getting the Data...\n");
@@ -113,12 +161,11 @@ int showTask()
     printf("How much seconds would you like to take to read all the data?\n");
     scanf("%d", &time);
 
-    if(time < 1){
+    if (time < 1)
+    {
         printf("Woah! You're a quick reader!\n Slow Down Buddy");
         Sleep(5000);
     }
-
-
 
     system("cls");
     while (fgets(line, sizeof(line), fp) != NULL)
@@ -126,6 +173,6 @@ int showTask()
         printf("%s", line);
     }
 
-    Sleep(time*1000);
+    Sleep(time * 1000);
     return 0;
 }
