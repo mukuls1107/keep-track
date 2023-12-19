@@ -41,7 +41,7 @@ int status()
     {
         printf("Closing the program...");
         Sleep(2000);
-        system("cls");
+        clearScreen();
         return 1;
     }
 }
@@ -120,7 +120,7 @@ int addTask()
         return 1;
     }
     fprintf(fp, "\n");
-    fprintf(fp, "Date and Time of Storage: %s\U0001F447\n", asctime(tm_info));
+    fprintf(fp, "Date and Time of Storage: %s👇\n", asctime(tm_info));
 
     for (int i = 0; i < task; i++)
     {
@@ -154,7 +154,7 @@ int showTask()
 
     printf("Getting the Data...\n");
     Sleep(2000);
-    printf("Data Recieved Successfully \u2705.\n");
+    printf("Data Recieved Successfully .\n");
     Sleep(1000);
 
     system("cls");
