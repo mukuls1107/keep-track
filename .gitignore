@@ -1,2 +1,4 @@
-task.txt
+*.txt
+
+test.c
 test.exe
