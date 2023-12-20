@@ -1,21 +1,25 @@
-# Keep Track
+# Keep Track Application
 
- Keep Track is a desktop based application build using the pure C Programming Language.
- Keep Track allows user to create and save their tasks in a text based file which stores the particular task provided by the user.
+**Keep Track** is a desktop application developed using the pure C Programming Language. It provides users with a straightforward solution for managing tasks by allowing them to create, save, and manipulate tasks within a text-based file.
 
-## Keep Track performs the following tasks.
+## Key Features
 
-- Accept number of tasks from user.
-- Store them in txt file.
-- User can also display the tasks in console.
+- **Task Management:** Accepts a user-defined number of tasks and stores them in a text file.
+- **Console Display:** Enables users to view their tasks directly within the console.
 
-## Future Plans
+## Future Enhancements
 
-- **User will be able to remove particular task.**
-- **Can also set reminders.**
+We are actively working on enhancing Keep Track with the following features:
+
+- [x] **Remove Specific Task:** Users can now easily delete a particular task.
+- [x] **Delete All Tasks:** An option to delete all tasks at once.
+- [ ] **Set Reminders:** Planned feature to incorporate task reminders.
 
 ### Connect With Us
-Stay updated on the application's development and connect with us on social media:
+
+Stay informed about Keep Track's development and engage with us on social media:
 
 - [Twitter](https://twitter.com/mukulownsyou)
 - [Instagram](https://instagram.com/mukulownsyou)
+
+Thank you for choosing Keep Track!
