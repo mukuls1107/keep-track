@@ -15,6 +15,10 @@ We are actively working on enhancing Keep Track with the following features:
 - [x] **Delete All Tasks:** An option to delete all tasks at once.
 - [ ] **Set Reminders:** Planned feature to incorporate task reminders.
 
+### Running Environment
+
+Keep Track has been tested and is currently running on the Windows operating system.
+
 ### Connect With Us
 
 Stay informed about Keep Track's development and engage with us on social media:
