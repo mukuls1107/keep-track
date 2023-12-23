@@ -15,6 +15,7 @@ int removeTask();
 void removeStringFromFile(const char *filename, const char *stringToRemove);
 int isFileEmpty(const char *filename);
 int clearContent();
+FILE *openFile(const char *filename, const char *mode);
 
 void main(void)
 {
@@ -81,25 +82,24 @@ int errorRaise()
     return 0;
 }
 
+FILE *openFile(const char *filename, const char *mode)
+{
+    FILE *file = fopen(filename, mode);
+    if (file == NULL)
+    {
+        perror("Error opening file");
+        exit(1);
+    }
+    return file;
+}
+
 void removeStringFromFile(const char *filename, const char *stringToRemove)
 {
     FILE *inputFile, *outputFile;
     char line[256];
 
-    inputFile = fopen(filename, "r");
-    if (inputFile == NULL)
-    {
-        perror("Error opening input file");
-        exit(1);
-    }
-
-    outputFile = fopen("temp.txt", "w+");
-    if (outputFile == NULL)
-    {
-        perror("Error opening temporary file");
-        fclose(inputFile);
-        exit(1);
-    }
+    inputFile = openFile("task.txt", "r");
+    outputFile = openFile("temp.txt", "w+");
 
     while (fgets(line, sizeof(line), inputFile) != NULL)
     {
@@ -246,7 +246,7 @@ int showTask()
 
     if (fp == NULL)
     {
-        printf("Unknown Error Occurred!\n");
+        printf("File Is Empty or Not Found!\n");
         return 1;
     }
 
@@ -312,8 +312,8 @@ int clearContent()
     FILE *fp;
     char flag;
     printf("Are you sure you want to clear all the Data from the file? [Y/N]: ");
+    scanf(" %c", &flag);
 
-    scanf("%c", &flag);
     if (flag == 'Y' || flag == 'y')
     {
         fp = fopen("task.txt", "w");
@@ -326,10 +326,12 @@ int clearContent()
         fprintf(fp, "");
 
         fclose(fp);
-        printf("Data Cleared [x].");
+        printf("Data Cleared [x].\n");
         return 0;
-    }else{
-        printf("Nothing Cleared!");
+    }
+    else
+    {
+        printf("Nothing Cleared!\n");
         return 0;
     }
 
