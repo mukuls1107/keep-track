@@ -1,12 +1,5 @@
 @echo off
 
->nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
-
-if %errorlevel% neq 0 (
-    echo You must run this script as Administrator.
-    pause
-    goto :eof
-)
 
 set filename=main
 

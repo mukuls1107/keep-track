@@ -134,6 +134,7 @@ void removeStringFromFile(const char *filename, const char *stringToRemove)
     }
 }
 
+
 int removeTask()
 {
     char taskArr[100];
